@@ -1,9 +1,12 @@
-filePath = './data/data.json'
+from recomendationSys import recomendationSys
 
-def setDataset(filePath):
-    with open (filePath, 'r') as dataset:
-        for data in dataset:
-            return data
-        
-if __name__ == "__main__":
-    setDataset(filePath)
+class main(recomendationSys):
+    def __init__(self):
+        super().__init__()
+    
+    def recomenda(self):
+        for user in self.dataset:
+            print('{} -> {}'.format(user, self.getRecomendacoes(user)))
+
+run = main()
+run.recomenda()
